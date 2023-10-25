@@ -33,7 +33,7 @@ main {
 	display: flex;
 	justify-content: center;
 	perspective: 1200px; 
-	cursor: url('/images/potion-small.png'), auto;
+	cursor: url('/images/cursor.png') 0 32, auto;
 }
 
 .book {
@@ -197,6 +197,10 @@ p {
 .book:hover > .book-content h3,
 .book:hover > .book-content p {
 	opacity: 1;
+}
+
+a:hover {
+	cursor: url('/images/cursor-glow.png') 0 32, auto;
 }
 
 #skills img {
