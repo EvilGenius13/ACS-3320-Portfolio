@@ -43,9 +43,11 @@ main {
 	display: flex;
 	justify-content: center;
 	perspective: 1200px; 
+	height: 100vh;
 }
 
 .book {
+	max-width: 80vw;
 	--book-height: 100vh;
 	--book-ratio: 1.4;
 	transition: transform 0.5s;
@@ -224,15 +226,59 @@ a:hover {
 	display: flex;
 	align-items: center;
 	margin-left: 30px;
+	flex-wrap: wrap;
 }
 
-.project h4, .project p, .project a {
-	width: 100%; /* This will make them take up the full width of the .project div */
+.project img {
+	flex: 1; /* Adjust this value to control the space the image takes up */
+	max-width: 40px;
+	transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.project1-image:hover {
+	box-shadow: 0 0 10px rgba(88,103,188,255),
+							 0 0 20px rgba(88,103,188,255),
+							 0 0 30px rgba(88,103,188,255);
+	background-color: rgba(88,103,188,255);
+}
+
+.project2-image:hover {
+	box-shadow: 0 0 10px rgba(249,136,36,255),
+							 0 0 20px rgba(249,136,36,255),
+							 0 0 30px rgba(249,136,36,255);
+	background-color: rgba(249,136,36,255);
+}
+
+.project3-image:hover {
+	box-shadow: 0 0 10px rgba(253,117,157,255),
+							 0 0 20px rgba(253,117,157,255),
+							 0 0 30px rgba(253,117,157,255);
+	background-color: rgba(253,117,157,255);
+}
+
+.project4-image:hover {
+	box-shadow: 0 0 10px rgba(126,95,201,255),
+							 0 0 20px rgba(126,95,201,255),
+							 0 0 30px rgba(126,95,201,255);
+	background-color: rgba(126,95,201,255);
+}
+
+.project5-image:hover {
+	box-shadow: 0 0 10px rgba(175,226,230,255),
+							 0 0 20px rgba(175,226,230,255),
+							 0 0 30px rgba(175,226,230,255);
+	background-color: rgba(175,226,230,255);
+}
+
+.project h4{
+	flex: 1; /* Adjust this value to control the space the title and description take up */
 	text-align: justify;
 }
 
-#portfolio .project img:hover {
-		box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* green glow */
+.project p {
+	flex: 3;
+	text-align: justify;
 }
 
 #skills img {
@@ -249,4 +295,15 @@ a:hover {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.project {
+		flex-direction: column; /* Stack items vertically on smaller screens */
+		align-items: flex-start; /* Align to the start */
+	}
+	.project img, .project h4, .project p {
+		max-width: 100%; /* Allow them to take the full width */
+		margin-bottom: 10px; /* Add some spacing between items */
+	}
 }
