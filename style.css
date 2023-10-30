@@ -13,7 +13,7 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url('images/alchemy1.png'); /* Replace 'path_to_your_image.jpg' with the path to your image */
+	background-image: url('images/background.png'); /* Replace 'path_to_your_image.jpg' with the path to your image */
   background-size: cover; /* This will ensure your image covers the entire viewport */
   background-repeat: no-repeat; /* This will ensure the image doesn't repeat */
   background-attachment: fixed; /* This ensures the background image doesn't scroll with the content */
@@ -27,6 +27,16 @@ h4,
 h5,
 p {
 	margin: 0;
+}
+
+h3 {
+	font-size: 28px;
+	font-weight: bolder;
+}
+
+h4 {
+	font-size: 20px;
+	font-style: italic;
 }
 
 main {
@@ -86,7 +96,7 @@ main {
 	right: 20px;
 	top: 0;
 	bottom: 0;
-	background-color: #1bec10;
+	background-color: #2f2061;
 }
 
 .book-cover-inner {
@@ -116,19 +126,20 @@ h1 {
 	font-family: 'MedievalSharp', cursive;
 	font-size: 60px;
 	font-weight: 300;
-	color: #dbd75d;
+	color: #3a658f;
 }
 
 h2 {
-	font-size: 26px;
+	font-size: 40px;
 	font-family: 'MedievalSharp', cursive;
+	color:#3a658f;
 }
 
 .separator {
 	--separator-width: 200px;
 	height: 2px;
 	width: var(--separator-width);
-	background-color: #dbd75d;
+	background-color: #feffe7;
 	margin: 50px auto 60px auto;
 	position: relative;
 	overflow: visible; /* To ensure pseudo-elements are visible */
@@ -140,24 +151,26 @@ h2 {
 	position: absolute;
 	height: 30px; /* Length of the ornate design */
 	width: 2px;
-	background-color: #dbd75d;
+	background-color: #feffe7;
 	top: 50%;
 	transform: translateY(-50%); /* Centering */
 }
 
 .separator::before {
 	left: -10px; /* Positioning the ornate design slightly outside of the main bar */
-	background: linear-gradient(to bottom, #dbd75d, transparent); /* Gradient for an ornate effect */
+	background: linear-gradient(to bottom, #feffe7, transparent); /* Gradient for an ornate effect */
 }
 
 .separator::after {
 	right: -10px; /* Positioning the ornate design slightly outside of the main bar */
-	background: linear-gradient(to bottom, transparent, #dbd75d); /* Gradient for an ornate effect */
+	background: linear-gradient(to bottom, transparent, #feffe7); /* Gradient for an ornate effect */
 }
 
 .book-content {
 	transform: scale(0.9) translateY(30px);
-	background-color: #F5DEB3 !important;
+	background: url('/images/script.jpg'), radial-gradient(circle, #F5DEB3, #E8CFA9);
+    background-size: cover;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s 1s;
 }
 
@@ -167,14 +180,14 @@ h2 {
 	transition: all 0.3s 0.3s;
 }
 
-h3 {
+h3, h4, a {
 	padding: 30px;
 }
 
 p {
 	padding: 0px 30px 10px 30px;
 	text-align: justify;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .book-cover > div {
@@ -207,9 +220,24 @@ a:hover {
 	text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* green glow */
 }
 
+.project {
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+}
+
+.project h4, .project p, .project a {
+	width: 100%; /* This will make them take up the full width of the .project div */
+	text-align: justify;
+}
+
+#portfolio .project img:hover {
+		box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* green glow */
+}
+
 #skills img {
-	height: 30px;
-	width: 30px;
+	height: 60px;
+	width: 60px;
 }
 
 #skills li {
@@ -219,6 +247,6 @@ a:hover {
 .skills-container ul {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 }
