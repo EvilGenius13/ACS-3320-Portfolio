@@ -7,7 +7,9 @@
 
 html, body {
 	height: 100%;
-	margin: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -43,11 +45,14 @@ main {
 	display: flex;
 	justify-content: center;
 	perspective: 1200px; 
-	height: 100vh;
+	width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .book {
-	max-width: 80vw;
+	max-width: 100vw;
 	--book-height: 100vh;
 	--book-ratio: 1.4;
 	transition: transform 0.5s;
@@ -224,8 +229,9 @@ a:hover {
 
 .project {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
-	margin-left: 30px;
+	margin-left: 20px;
 	flex-wrap: wrap;
 }
 
@@ -273,7 +279,7 @@ a:hover {
 }
 
 .project h4{
-	flex: 1; /* Adjust this value to control the space the title and description take up */
+	flex: 1.5; /* Adjust this value to control the space the title and description take up */
 	text-align: justify;
 }
 
@@ -297,4 +303,60 @@ a:hover {
 	justify-content: space-around;
 	align-items: center;
 }
+#wrapper {
+	width: 100%;
+	height: 100%;
+	position: fixed;  /* Ensures the wrapper takes up the full screen */
+	top: 0;
+	left: 0;
+}
+
+.work-history {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.work-history th, .work-history td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* adjust as needed */
+}
+
+.work-history th {
+  background-color: #f0f0f0; /* adjust as needed */
+}
+
+/* Hover effect for rows */
+.work-history tr:hover {
+  background-color: #f1f1f1; /* adjust as needed */
+}
+
+@media (max-width: 1024px) {
+	/* Reset or override styles for .book */
+	.book {
+			max-width: unset;
+			width: 100%;
+			height: 100vh;
+			/* ... other styles ... */
+	}
+	/* Reset or override styles for .book > div */
+	.book > div {
+			height: 100%;
+			width: 100%;
+			/* ... other styles ... */
+	}
+	/* Reset or override styles for .book-content */
+	.book-content {
+			transform: unset;
+			/* ... other styles ... */
+	}
+	/* ... and so on for other elements ... */
+}
+
+
+
+
+
+
 
