@@ -323,13 +323,18 @@ a:hover {
   border-bottom: 1px solid #ddd; /* adjust as needed */
 }
 
-.work-history th {
-  background-color: #f0f0f0; /* adjust as needed */
+
+/* Add this new class for the glow effect */
+.glow-on-hover {
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* smooth transition */
 }
 
-/* Hover effect for rows */
-.work-history tr:hover {
-  background-color: #f1f1f1; /* adjust as needed */
+/* Specify the glowing effect on hover */
+.glow-on-hover:hover {
+  box-shadow: 0 0 10px rgba(92,228,147,255),
+               0 0 20px rgba(92,228,147,255),
+               0 0 30px rgba(92,228,147,255);
+  background-color: rgba(92,228,147,255); /* Optional: change background color on hover */
 }
 
 @media (max-width: 1024px) {
@@ -353,10 +358,3 @@ a:hover {
 	}
 	/* ... and so on for other elements ... */
 }
-
-
-
-
-
-
-
