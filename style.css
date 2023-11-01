@@ -175,7 +175,7 @@ h2 {
 
 .book-content {
 	transform: scale(0.9) translateY(30px);
-	background: url('/images/script.jpg'), radial-gradient(circle, #F5DEB3, #E8CFA9);
+	background: url('images/script.jpg'), radial-gradient(circle, #F5DEB3, #E8CFA9);
     background-size: cover;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s 1s;
