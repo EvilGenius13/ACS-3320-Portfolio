@@ -396,10 +396,28 @@ a:hover {
 	}
 		
 	.book {
-			max-width: 80vw;
+			max-width: 85vw;
 	}
 	.book > div {
-			height: 80vh;
-			width: calc(80vh / var(--book-ratio));
+			height: 85vh;
+			width: calc(65vh / var(--book-ratio));
 	}
+	.book-cover::before {
+		content: "";
+		position: absolute;
+		width: 10px;
+		right: 10px;
+		top: 0;
+		bottom: 0;
+		background-color: #2f2061;
+	}
+
+	.book-cover h1 {
+		font-size: 40px;
+	}
+
+	.book-cover h2 {
+		font-size: 30px;
+	}
+
 }
