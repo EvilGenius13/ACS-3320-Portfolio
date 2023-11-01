@@ -15,11 +15,11 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url('images/background.png'); /* Replace 'path_to_your_image.jpg' with the path to your image */
-  background-size: cover; /* This will ensure your image covers the entire viewport */
-  background-repeat: no-repeat; /* This will ensure the image doesn't repeat */
-  background-attachment: fixed; /* This ensures the background image doesn't scroll with the content */
-  background-position: center center; /* This will center the image */
+	background-image: url('images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 h1,
@@ -41,19 +41,18 @@ h4 {
 	font-style: italic;
 }
 
-main {
+#wrapper, main {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	perspective: 1200px; 
+	align-items: center;
+	height: 100%;
 	width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .book {
-	max-width: 100vw;
-	--book-height: 100vh;
+	max-width: 90vw;
+	--book-height: 90vh;
 	--book-ratio: 1.4;
 	transition: transform 0.5s;
 }
@@ -67,9 +66,9 @@ main {
 	border-radius: 6px;
 	transform-origin: left;
 	box-shadow: 
-		0 10px 15px rgba(0, 0, 0, 0.3), /* Inner shadow */
-		0 20px 25px rgba(0, 0, 0, 0.4), /* Middle shadow */
-		0 30px 35px rgba(0, 0, 0, 0.5); /* Outermost shadow */
+		0 10px 15px rgba(0, 0, 0, 0.3),
+		0 20px 25px rgba(0, 0, 0, 0.4),
+		0 30px 35px rgba(0, 0, 0, 0.5);
 }
 
 .book-cover {
@@ -84,14 +83,14 @@ main {
 		linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
 		linear-gradient(315deg, black 25%, transparent 25%),
 		linear-gradient(45deg, black 25%, transparent 25%),
-		linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1), transparent, rgba(0,0,0,0.1), rgba(0,0,0,0.2)); /* Add this gradient for a 3D effect on the book cover */
+		linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.1), transparent, rgba(0,0,0,0.1), rgba(0,0,0,0.2));
 	background-size: 2em 2em, 100%;
 	background-color: #232323;
 	color: white;
 	transition: transform 2s;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6), 
-                -5px -5px 15px rgba(255, 255, 255, 0.1); /* This adds a shadow to the right and bottom and a slight light effect to the top and left */
-    border: 1px solid rgba(0, 0, 0, 0.2); /* A subtle border can sometimes help */
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 
 }
@@ -116,16 +115,34 @@ main {
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg);
-    backface-visibility: hidden; /* Hide when not in view */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s 1s; /* Transition for smooth appearance */
-    color: #dbd75d; /* Adjust color to your liking */
-    font-size: 18px; /* Adjust font size to your liking */
+    backface-visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s 1s;
+    color: #dbd75d;
+    font-size: 18px;
 }
 
 .book:hover .book-cover-inner {
-    opacity: 1; /* Show when book is hovered */
+    opacity: 1;
 		transform: scale(1.05) translateY(-10px);
+}
+
+/* Style the scrollbar track (background) */
+.book-content::-webkit-scrollbar-track {
+	border-radius: 6px;
+	background-color: #040209;
+}
+
+/* Style the scrollbar thumb (handle) */
+.book-content::-webkit-scrollbar-thumb {
+	border-radius: 6px;
+	background-color: #2f2061;
+}
+
+/* Optionally, style the scrollbar itself*/
+.book-content::-webkit-scrollbar {
+	width: 12px;
+	
 }
 
 
@@ -156,21 +173,21 @@ h2 {
 .separator::before {
 	content: "";
 	position: absolute;
-	height: 30px; /* Length of the ornate design */
+	height: 30px;
 	width: 2px;
 	background-color: #feffe7;
 	top: 50%;
-	transform: translateY(-50%); /* Centering */
+	transform: translateY(-50%);
 }
 
 .separator::before {
 	left: -10px; /* Positioning the ornate design slightly outside of the main bar */
-	background: linear-gradient(to bottom, #feffe7, transparent); /* Gradient for an ornate effect */
+	background: linear-gradient(to bottom, #feffe7, transparent);
 }
 
 .separator::after {
 	right: -10px; /* Positioning the ornate design slightly outside of the main bar */
-	background: linear-gradient(to bottom, transparent, #feffe7); /* Gradient for an ornate effect */
+	background: linear-gradient(to bottom, transparent, #feffe7);
 }
 
 .book-content {
@@ -179,6 +196,7 @@ h2 {
     background-size: cover;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s 1s;
+	overflow-y: scroll;
 }
 
 .book-content h3,
@@ -220,11 +238,11 @@ p {
 
 a {
 	transition: all 0.3s ease-in-out; /* smooth transition */
-	text-decoration: none; /* remove underlines */
+	text-decoration: none;
 }
 
 a:hover {
-	text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; /* green glow */
+	text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
 
 .project {
@@ -236,7 +254,7 @@ a:hover {
 }
 
 .project img {
-	flex: 1; /* Adjust this value to control the space the image takes up */
+	flex: 1;
 	max-width: 40px;
 	min-width: 40px;
 	transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -308,13 +326,6 @@ a:hover {
 	align-items: center;
 	padding-left: 0px;
 }
-#wrapper {
-	width: 100%;
-	height: 100%;
-	position: fixed;  /* Ensures the wrapper takes up the full screen */
-	top: 0;
-	left: 0;
-}
 
 .work-history {
   width: 100%;
@@ -373,26 +384,22 @@ a:hover {
 	background-color: rgba(0,119,181,255); /* Optional: change background color on hover */
 }
 
-
-
-@media (max-width: 1024px) {
-	/* Reset or override styles for .book */
+@media (max-width: 900px) {
+	main {
+		perspective: none;
+}
+	
+	#wrapper, main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+		
 	.book {
-			max-width: unset;
-			width: 100%;
-			height: 100vh;
-			/* ... other styles ... */
+			max-width: 80vw;
 	}
-	/* Reset or override styles for .book > div */
 	.book > div {
-			height: 100%;
-			width: 100%;
-			/* ... other styles ... */
+			height: 80vh;
+			width: calc(80vh / var(--book-ratio));
 	}
-	/* Reset or override styles for .book-content */
-	.book-content {
-			transform: unset;
-			/* ... other styles ... */
-	}
-	/* ... and so on for other elements ... */
 }
