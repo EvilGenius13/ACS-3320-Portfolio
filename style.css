@@ -418,7 +418,7 @@ a:hover {
     margin-right: 20px;
   }
   .book > div {
-    height: 85vh;
+    height: 80vh;
     width: calc(65vh / var(--book-ratio));
   }
   .book-cover::before {
@@ -531,7 +531,7 @@ a:hover {
 
   .glow-on-hover .description {
     max-width: 90%;
-    margin: auto;
+    margin: auto auto 15px auto;
   }
 
   #contact-list {
